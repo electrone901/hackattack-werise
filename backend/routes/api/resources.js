@@ -3,33 +3,19 @@ const router = express.Router();
 
 const Resources = require('../../models/Resources');
 
-// @route   GET api/companies
-router.get('/', (req,res) => res.send({msg: "resources Work"}));
+// @route   GET api/resources
 
 // get all
-// router.get('/all', (req, res) => {
-//      Resources.find({}, function(items))
-//          .populate('title')
-//          .then(stocks => {
-//              res.json(resources);
-//          })
-//          .catch(err => 
-//              res.status(404).json({error: err})
-//         );
-// });
-
-// server.get('/usersList', function(req, res) {
-//   User.find({}, function(err, users) {
-//     var userMap = {};
-
-//     users.forEach(function(user) {
-//       userMap[user._id] = user;
-//     });
-
-//     res.send(userMap);  
-//   });
-// });
-
+router.get('/all', (req, res) => {
+    Resources.find({},function(err, items) {
+        if(err) {
+            console.log(err);
+        } 
+        else {  
+            res.json(items);
+        }
+     })
+});
 
 // get a resource by id
 // router.get('/all/:id', (req, res) => {
@@ -46,11 +32,13 @@ router.get('/', (req,res) => res.send({msg: "resources Work"}));
 
 // create a post
 router.post('/',(req, res) => {
-	console.log('req.body.title', req.body)
+    console.log('req.body.title', req.body)
     const resources = {};
     resources.title = req.body.title;
     resources.link = req.body.link;
     resources.image = req.body.image;
+    resources.description = req.body.description;
+    resources.category = req.body.category;
     
     new Resources(resources).save().then(resources => res.json(resources));
 });

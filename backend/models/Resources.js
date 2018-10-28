@@ -16,6 +16,14 @@ const ResourceSchema = new Schema({
 	image: {
 		type:String,
 		require: true
+	},
+	description: {
+		type: String,
+		require: true
+	},
+	category: {
+		type: String,
+		require: true
 	}
 });
 
