@@ -58,3 +58,8 @@ footer.footer {
   position: absolute;
   height: 58.5%;
 }
+
+.res {
+  width: 80px;
+  float: left;
+}

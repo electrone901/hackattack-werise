@@ -62,9 +62,9 @@ h6 {
   }
 }
 
-.map iframe {
+/*.map iframe {
   pointer-events: none;
-}
+}*/
 
 .scroll-to-top {
   position: fixed;
