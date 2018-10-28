@@ -7,28 +7,28 @@ const Resources = require('../../models/Resources');
 router.get('/', (req,res) => res.send({msg: "resources Work"}));
 
 // get all
-router.get('/all', (req, res) => {
-     Resources.find({}, function(items))
-         .populate('title')
-         .then(stocks => {
-             res.json(resources);
-         })
-         .catch(err => 
-             res.status(404).json({error: err})
-        );
-});
+// router.get('/all', (req, res) => {
+//      Resources.find({}, function(items))
+//          .populate('title')
+//          .then(stocks => {
+//              res.json(resources);
+//          })
+//          .catch(err => 
+//              res.status(404).json({error: err})
+//         );
+// });
 
-server.get('/usersList', function(req, res) {
-  User.find({}, function(err, users) {
-    var userMap = {};
+// server.get('/usersList', function(req, res) {
+//   User.find({}, function(err, users) {
+//     var userMap = {};
 
-    users.forEach(function(user) {
-      userMap[user._id] = user;
-    });
+//     users.forEach(function(user) {
+//       userMap[user._id] = user;
+//     });
 
-    res.send(userMap);  
-  });
-});
+//     res.send(userMap);  
+//   });
+// });
 
 
 // get a resource by id
