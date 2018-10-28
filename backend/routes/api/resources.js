@@ -17,18 +17,45 @@ router.get('/all', (req, res) => {
      })
 });
 
-// get a resource by id
-// router.get('/all/:id', (req, res) => {
-//      Stock.find({user: req.params.id})
-//          .sort({symbol: 1})
-//          .populate('user', ['name'])
-//          .then(stocks => {
-//              res.json(stocks);
-//          })
-//          .catch(err => 
-//              res.status(404).json({error: err})
-//         );
-// });
+
+// get category advance
+router.get('/all/advance', (req, res) => {
+     Resources.find({category: req.params.category})
+         .where("category").ne(null)
+         .where('category').equals('advance')
+         .then(category => {
+             res.json(category);
+         })
+         .catch(err => 
+             res.status(404).json({error: err})
+        );
+});
+
+// intermediate
+router.get('/all/intermediate', (req, res) => {
+     Resources.find({category: req.params.category})
+         .where("category").ne(null)
+         .where('category').equals('intermediate')
+         .then(category => {
+             res.json(category);
+         })
+         .catch(err => 
+             res.status(404).json({error: err})
+        );
+});
+
+router.get('/all/begin', (req, res) => {
+     Resources.find({category: req.params.category})
+         .where("category").ne(null)
+         .where('category').equals('begin')
+         .then(category => {
+             res.json(category);
+         })
+         .catch(err => 
+             res.status(404).json({error: err})
+        );
+});
+
 
 // create a post
 router.post('/',(req, res) => {
