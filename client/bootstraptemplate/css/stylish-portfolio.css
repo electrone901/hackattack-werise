@@ -145,7 +145,7 @@ h6 {
   list-style: none;
 }
 
-.sidebar-nav li.sidebar-nav-item a {
+.sidebar-nav sidebar-nav-item a {
   display: block;
   text-decoration: none;
   color: #fff;
