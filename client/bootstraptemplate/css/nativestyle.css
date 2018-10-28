@@ -63,3 +63,14 @@ footer.footer {
   width: 80px;
   float: left;
 }
+
+.resourceLink {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.des {
+  font-family: arial;
+  color: #2ec9c1;
+  font-size: 1.5em;
+}
